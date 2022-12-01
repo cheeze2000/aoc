@@ -1,0 +1,10 @@
+#!/bin/bash
+
+f=$2
+d=${f::-1}
+p=${f: -1}
+
+dir=$(printf "20%s/%02d" $1 $d)
+cd $dir
+
+python $p.py < i.txt
