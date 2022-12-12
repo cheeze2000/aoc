@@ -35,8 +35,8 @@ int main() {
 		for (M& y : ys) {
 			for (ll x : y.xs) {
 				ll r = y.q < 0 ? x : y.q;
-				if (y.p) r = x + r;
-				else r = x * r;
+				if (y.p) r += x;
+				else r *= x;
 
 				int t = y.m[r % y.d > 0];
 				ys[t].xs.push_back(r % D);
@@ -47,7 +47,7 @@ int main() {
 		}
 	}
 
-	sort(ys.begin(), ys.end(), [](M a, M b) {
+	sort(ys.begin(), ys.end(), [&](M a, M b) {
 		return a.n > b.n;
 	});
 

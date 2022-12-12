@@ -44,7 +44,7 @@ int main() {
 		}
 	}
 
-	sort(ys.begin(), ys.end(), [](M a, M b) {
+	sort(ys.begin(), ys.end(), [&](M a, M b) {
 		return a.n > b.n;
 	});
 
