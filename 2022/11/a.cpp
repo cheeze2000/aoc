@@ -1,7 +1,7 @@
 #include "../../io.hpp"
 
 struct M {
-	multiset<int> xs;
+	vector<int> xs;
 	bool p;
 	int q;
 	int d;
@@ -14,8 +14,7 @@ int main() {
 	vector<M> ys;
 
 	while (getline(cin, xs)) {
-		auto ns = read_nums();
-		M m { multiset<int>(ns.begin(), ns.end()), false, 0, 0, { 0, 0 } };
+		M m { read_nums(), false, 0, 0, { 0, 0 } };
 		string zs; char o;
 		getline(cin, zs, 'd');
 		cin >> o >> zs;
@@ -37,7 +36,7 @@ int main() {
 				else r = x * r / 3;
 
 				int t = y.m[r % y.d > 0];
-				ys[t].xs.insert(r);
+				ys[t].xs.push_back(r);
 			}
 
 			y.n += y.xs.size();
