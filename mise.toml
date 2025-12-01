@@ -3,3 +3,6 @@ uv = "latest"
 
 [tasks.2024]
 run = "uv run main.py 2024"
+
+[tasks.2025]
+run = "uv run main.py 2025"
