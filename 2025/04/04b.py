@@ -22,8 +22,7 @@ def solve(input):
 
 		return ans
 
-	neighbour_counts = defaultdict(int)
-
+	neighbour_counts = {}
 	heap = []
 
 	for i in range(r):
