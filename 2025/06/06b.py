@@ -19,11 +19,11 @@ def solve(input):
 	operators = operators.split()
 	for i in range(len(operators)):
 		column = [row[i] for row in nums]
-		n = len(column[0])
+		n = max(len(entry) for entry in column)
 
 		transposed = []
 		for j in range(n - 1, -1, -1):
-			num = [entry[j] for entry in column if entry[j] != " "]
+			num = [entry[j] for entry in column if j < len(entry) and entry[j] != " "]
 			transposed.append(int("".join(num)))
 
 		if operators[i] == "+":
